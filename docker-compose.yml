@@ -1,0 +1,26 @@
+version : '3.8'
+
+services:
+
+  backend:
+    hostname: project-back
+
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 40755:40755
+    volumes:
+      - .:/app
+
+  db:
+    hostname: project-back-db
+    image: postgres
+    restart : always
+
+    environment:
+      POSTGRES_USER : projectuser
+      POSTGRES_DB: projectdb
+      POSTGRES_PASSWORD: project1234
+    volumes:
+      - pgdata:/var/lib/postgresql/data
