@@ -26,6 +26,9 @@ ALLOWED_HOSTS = [
 
 
 # Application definition
+# AUTH_USER_MODEL = 'users.ExtendedUser'
+
+# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -34,7 +37,20 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # installed apps
+    'rest_framework',
+    'corsheaders',
+    # local apps
+    # 'users',
 ]
+
+#Rest Framework settings
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES' : (
+        # declares the default authentication with rest_framework_simplejwt
+         'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
