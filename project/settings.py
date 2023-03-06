@@ -1,5 +1,6 @@
 
 from pathlib import Path
+from datetime import timedelta
 
 import os,environ
 
@@ -50,6 +51,12 @@ REST_FRAMEWORK = {
         # declares the default authentication with rest_framework_simplejwt
          'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
+}
+
+# declares the lifetime of the rest framework simple-jwt tokens
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=2),
 }
 
 MIDDLEWARE = [
