@@ -27,7 +27,7 @@ ALLOWED_HOSTS = [
 
 
 # Application definition
-# AUTH_USER_MODEL = 'users.ExtendedUser'
+AUTH_USER_MODEL = 'users.ExtendedUser'
 
 # Application definition
 
@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     # local apps
-    # 'users',
+    'users',
 ]
 
 #Rest Framework settings
